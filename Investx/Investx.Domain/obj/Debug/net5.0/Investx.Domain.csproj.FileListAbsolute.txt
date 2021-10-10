@@ -1,0 +1,15 @@
+C:\Repos\Investx\Investx.Domain\bin\Debug\net5.0\Investx.Domain.deps.json
+C:\Repos\Investx\Investx.Domain\bin\Debug\net5.0\Investx.Domain.dll
+C:\Repos\Investx\Investx.Domain\bin\Debug\net5.0\ref\Investx.Domain.dll
+C:\Repos\Investx\Investx.Domain\bin\Debug\net5.0\Investx.Domain.pdb
+C:\Repos\Investx\Investx.Domain\bin\Debug\net5.0\Investx.Infra.dll
+C:\Repos\Investx\Investx.Domain\bin\Debug\net5.0\Investx.Infra.pdb
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.csprojAssemblyReference.cache
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.AssemblyInfoInputs.cache
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.AssemblyInfo.cs
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.csproj.CoreCompileInputs.cache
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.csproj.CopyComplete
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.dll
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\ref\Investx.Domain.dll
+C:\Repos\Investx\Investx.Domain\obj\Debug\net5.0\Investx.Domain.pdb

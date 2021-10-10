@@ -1,0 +1,12 @@
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\Investx.Infra.csprojAssemblyReference.cache
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\Investx.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\Investx.Infra.AssemblyInfoInputs.cache
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\Investx.Infra.AssemblyInfo.cs
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\Investx.Infra.csproj.CoreCompileInputs.cache
+C:\Repos\Investx\Investx.Infra\bin\Debug\net5.0\Investx.Infra.deps.json
+C:\Repos\Investx\Investx.Infra\bin\Debug\net5.0\Investx.Infra.dll
+C:\Repos\Investx\Investx.Infra\bin\Debug\net5.0\ref\Investx.Infra.dll
+C:\Repos\Investx\Investx.Infra\bin\Debug\net5.0\Investx.Infra.pdb
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\Investx.Infra.dll
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\ref\Investx.Infra.dll
+C:\Repos\Investx\Investx.Infra\obj\Debug\net5.0\Investx.Infra.pdb
