@@ -3,13 +3,14 @@ using Investx.Infra.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Investx.Infra
 {
     public class InvestXRepository
     {
-        public string RecuperarInvestidores()
+        public List<InvestidoresDTO> RecuperarInvestidores()
         {
             var enderecoConexao = GetConnection();
 
@@ -18,8 +19,8 @@ namespace Investx.Infra
                 try
                 {
                     nossaconexao.Open();
-                    var investidores = nossaconexao.Query<object>("SELECT * FROM [dbinvestimento].[dbo].[Cliente]").ToList();
-                    return investidores.ToString();
+                    var investidores = nossaconexao.Query<InvestidoresDTO>("SELECT * FROM [dbinvestimento].[dbo].[investidores]").AsList();
+                    return investidores;
                 }
                 catch (Exception ex)
                 {
@@ -46,7 +47,7 @@ namespace Investx.Infra
                     try
                     {
                         nossaconexao.Open();
-                        object p = nossaconexao.Execute("INSERT INTO [dbinvestimento].[dbo].[investidores] VALUES ('" + investidores.nome + "','" + investidores.cpf + "');");
+                        object p = nossaconexao.Execute($"INSERT INTO dbinvestimento.dbo.investidores(nome,cpf,ativo,rg) VALUES ('{investidores.nome}', '{investidores.cpf}', '{investidores.ativo}', '{investidores.rg}');");
                         //var investidores = nossaconexao.Query<object>("INSERT INTO [dbinvestimento].[dbo].[investidores](nome,cpf) " + "VALUES ('Pedro', 97885412311)").ToList();
                         //"insert into clientes(nome, data_nascimento, email) values(@nome, @data_nascimento, @email)"
                     }
@@ -73,9 +74,7 @@ namespace Investx.Infra
                 {
                     nossaconexao.Open();
                     var investidores = nossaconexao.Query<object>("DELETE FROM [dbinvestimento].[dbo].[investidores]" + " where id = " + @id).ToList();
-                    //investidores.RemoveAt(id);
 
-                    //"DELETE FROM backup" + "WHERE Fitas = " + fita.getText());
                 }
                 catch (Exception ex)
                 {
@@ -89,7 +88,7 @@ namespace Investx.Infra
             }
 
         }
-        public void Atualizar()
+        public void Atualizar(InvestidoresDTO investidores, int id)
 
         {
             var enderecoConexao = GetConnection();
@@ -99,7 +98,7 @@ namespace Investx.Infra
                 try
                 {
                     nossaconexao.Open();
-                    var investidores = nossaconexao.Query<object>("UPDATE [dbinvestimento].[dbo].[investidores] " + "set cidadeNatal = " + "'Salvador'" + " where id = " + "22").ToList();
+                    nossaconexao.Query<object>($"UPDATE dbinvestimento.dbo.investidores set nome ='{investidores.nome}', cpf ='{investidores.cpf}', ativo ='{investidores.ativo}', rg = '{investidores.rg}' where id = {id};");
                     //"update clientes set nome = @nome, data_nascimento = @data_nascimento, email = @email where id = @id";
                     //"DELETE FROM [dbinvestimento].[dbo].[investidores]" +" where id = " + "21").ToList();
                     //UPDATE investidores set cidade= 'Salvador'  where id = 9

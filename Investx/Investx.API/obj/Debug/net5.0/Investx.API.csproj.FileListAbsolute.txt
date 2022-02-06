@@ -38,3 +38,5 @@ C:\Repos\Investx\Investx.API\bin\Debug\net5.0\Investx.Infra.dll
 C:\Repos\Investx\Investx.API\bin\Debug\net5.0\Investx.Infra.pdb
 C:\Repos\Investx\Investx.API\bin\Debug\net5.0\Investx.Domain.dll
 C:\Repos\Investx\Investx.API\bin\Debug\net5.0\Investx.Domain.pdb
+C:\Repos\Investx\Investx.API\bin\Debug\net5.0\Caelum.Stella.CSharp.dll
+C:\Repos\Investx\Investx.API\bin\Debug\net5.0\Newtonsoft.Json.dll

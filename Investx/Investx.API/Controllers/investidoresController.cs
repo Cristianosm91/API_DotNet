@@ -1,4 +1,5 @@
-﻿using Dapper;
+﻿using Caelum.Stella.CSharp.Validation;
+using Dapper;
 //using Investx.Infra;
 using Investx.Domain;
 using Investx.Domain.Entidades;
@@ -29,13 +30,18 @@ namespace Investx.API.Controllers
         }
 
         [HttpGet]
-        //public List<Investidores> RecuperarInvestidores()
-        //daqui
-        // public string RecuperarInvestidores()
+        public List<Investidores> RecuperarInvestidores()
+        {
+            List<Investidores> listaInvestidores = new List<Investidores>();
+            var classDomainInvestidores = new DomainInvestidores();
+            listaInvestidores = classDomainInvestidores.RecuperarInvestidores();
+            return listaInvestidores;
+        }
+        //public string RecuperarInvestidores()
         //{
-        //    var classInvestXRepository = new InvestXRepository();
-        //    var lista = classInvestXRepository.RecuperarInvestidores();
-        //    return lista;
+        //  var classInvestXRepository = new InvestXRepository();
+        //  var lista = classInvestXRepository.RecuperarInvestidores();
+        //  return lista;
         //}
         //até aqui
 
@@ -79,11 +85,12 @@ namespace Investx.API.Controllers
         [HttpDelete]
         // DELETE api/values/5
         //daqui
-        //  public void Delete(int id)
-        //{
-        //    var classInvestXRepository = new InvestXRepository();
-        //    classInvestXRepository.Delete(id);
-        //}
+        public void Delete([FromForm] int id)
+        {
+
+            var classDomainInvestidores = new DomainInvestidores();
+            classDomainInvestidores.Deletar(id);
+        }
         //aqui
         //public void Delete(int id)
         //{
@@ -117,6 +124,7 @@ namespace Investx.API.Controllers
 
             public void Insert([FromForm] Investidores investidores)
         {
+
             var classDomainInvestidores = new DomainInvestidores();
             classDomainInvestidores.Insert(investidores);
         }
@@ -153,34 +161,38 @@ namespace Investx.API.Controllers
 
         }
      */
-        //   [HttpPut]
-        //public void Atualizar()
+        [HttpPut]
+        public void Atualizar(Investidores investidores, int id)
 
-        //{
-        //    var enderecoConexao = GetConnection();
+        {
+            var classDomainInvestidores = new DomainInvestidores();
+            classDomainInvestidores.Atualizar(investidores, id);
+        
+            }
+            //    var enderecoConexao = GetConnection();
 
-        //    using (var nossaconexao = new SqlConnection(enderecoConexao))
-        //    {
-        //        try
-        //        {
-        //            nossaconexao.Open();
-        //            var investidores = nossaconexao.Query<object>("UPDATE [dbinvestimento].[dbo].[investidores] " + "set cidadeNatal = " +"'Salvador'" + " where id = " + "22").ToList();
-        //            //"update clientes set nome = @nome, data_nascimento = @data_nascimento, email = @email where id = @id";
-        //            //"DELETE FROM [dbinvestimento].[dbo].[investidores]" +" where id = " + "21").ToList();
-        //            //UPDATE investidores set cidade= 'Salvador'  where id = 9
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new Exception(ex.Message);
-        //        }
-        //        finally
-        //        {
-        //            nossaconexao.Close();
-        //        }
+            //    using (var nossaconexao = new SqlConnection(enderecoConexao))
+            //    {
+            //        try
+            //        {
+            //            nossaconexao.Open();
+            //            var investidores = nossaconexao.Query<object>("UPDATE [dbinvestimento].[dbo].[investidores] " + "set cidadeNatal = " +"'Salvador'" + " where id = " + "22").ToList();
+            //            //"update clientes set nome = @nome, data_nascimento = @data_nascimento, email = @email where id = @id";
+            //            //"DELETE FROM [dbinvestimento].[dbo].[investidores]" +" where id = " + "21").ToList();
+            //            //UPDATE investidores set cidade= 'Salvador'  where id = 9
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            throw new Exception(ex.Message);
+            //        }
+            //        finally
+            //        {
+            //            nossaconexao.Close();
+            //        }
 
-        //    }
+            //    }
 
-        //}
+            //}
 
-    }
+        }
 }
