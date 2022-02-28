@@ -5,67 +5,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
     <title>Investx</title>
 
 </head>
 
 <body>
-
-    <section class="main">
-        <div>
-            <h1>Cadastro de investidores</h1>
-            <p>Complete as informações</p>
-            <br>
-
-        </div>
-        <!-- 
-        <form action="https://localhost:5001/investidores" method="GET">
-            <h2>pagina teste</h2>
-            <div>
-                <input type="submit" value="Submit" />
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">InvestX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Tesouro</a>
+                    <a class="nav-link" href="#">Ações</a>
+                    <a class="nav-link" href="#">Fundos Imobiliários</a>
+                </div>
             </div>
-        </form> -->
-        <div>
-            <form id="form">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite o nome do investidor"><br><br>
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF do investidor"><br><br>
-                <label for="rg">RG:</label>
-                <input type="text" id="rg" name="rg" placeholder="Digite o RG do investidor"><br><br>
-                <label for="ativo">Ativo:</label>
-                <input type="text" id="ativo" name="ativo" placeholder="Digite o status"><br><br>
-            </form>
-            <button type="button" id="meubotao" name="meubotao">Salvar Cadastro</button>
         </div>
+    </nav>
 
+    <section>
+        <div class="input-group-text w-100 p-3 mb-2 d-flex justify-content-center text-black ">
+            <!-- <h1 class="w-100 p-3 d-flex justify-content-center text-black fw-bold">Cadastro de investidores</h1> -->
+            <p class="fw-bold h3">Para cadastro insira as informações abaixo:</p>
+        </div>
+    </section>
+
+
+    <section class="d-flex justify-content-center">
+        <div class="form-group col-md-4">
+            <div class="input-group mb-2">
+                <span class="input-group-text w-25">Nome:</span>
+                <input type="text" id="nome" name="nome" placeholder="Digite o nome" class="form-control">
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text w-25">CPF:</span>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite o cpf" class="form-control">
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text w-25">RG:</span>
+                <input type="text" id="rg" name="rg" placeholder="Digite o RG" class="form-control">
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text w-25">Ativo:</span>
+                <input type="text" id="ativo" name="ativo" placeholder="Digite o Status" class="form-control">
+            </div>
+            <div class="input-group mb-2">
+                <button class="btn btn-primary" type="submit" id="meubotao" name="meubotao">Salvar Cadastro</button>
+            </div>
+        </div>
+    </section>
+    <!-- <div>
+        <form id="form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome do investidor"><br><br>
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF do investidor"><br><br>
+            <label for="rg">RG:</label>
+            <input type="text" id="rg" name="rg" placeholder="Digite o RG do investidor"><br><br>
+            <label for="ativo">Ativo:</label>
+            <input type="text" id="ativo" name="ativo" placeholder="Digite o status"><br><br>
+        </form>
+        <button type="button" id="meubotao" name="meubotao">Salvar Cadastro</button>
+    </div> -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
-</script>
-
-<script>
-    $(document).ready(function() {
-        $("#meubotao").click(function(event) {
-            alert('Cadastro Enviado');
-            event.preventDefault();
-            var actionurl = event.currentTarget.action;
-            $.ajax({
-                url: "https://localhost:5001/investidores",
-                type: "POST",
-                data: $("form").serialize(),
-                sucess: function(data) {
-                    alert('Sucesso:' + data.responseJSON.ativo);
-                },
-                error: function(data) {
-                    alert('ERRO:' + data.responseJSON.ativo);
-                }
-            });
-        });
-    });
-</script>
-
 
 </html>
 
